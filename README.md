@@ -1,8 +1,8 @@
-## Welcome to GNANI API Service
+## Welcome to GNANI Api Service
 
 Use our Api to convert your Speech to Text
 
-Here is a quick set-up guide to integrate Gnani speech API into your system.
+Here is a quick set-up guide to integrate Gnani speech Api into your system.
 
 Gnani speech Api supports multiple languages:
 - Kannada
@@ -118,6 +118,8 @@ Language Codes are as follows :
 <td markdown="span">Encoding Format</td>
 <td markdown="span">pcm 16 bit</td>
 </tr>
+</tbody>
+</table>
   * We will be supporting different audio properties soon.
   
 ## Sample Code
