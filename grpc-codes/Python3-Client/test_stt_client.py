@@ -7,6 +7,8 @@ import grpc
 import proto.stt_pb2 as stt_pb2
 import time
 import wave
+_TIMEOUT_SECONDS = 10
+_TIMEOUT_SECONDS_STREAM = 1000
 
 class Sender:
 
@@ -16,11 +18,11 @@ class Sender:
 			for item in self.generate_chunks(filename, grpc_on=True, chunkSize=chunkSize):
 				yield item
 
-	    '''
-			Pass the Token , Username , Password and the Lnaguage as headers in the below fields.
-		'''		
-		responses=service.DoSpeechToText(request_stream(),_TIMEOUT_SECONDS_STREAM,metadata=(('token',token),('lang','hin'),('user_id','111'),('trans_id','gnani_16@gnani.ai;SQLITE;190227160138')))
-	
+	    
+		#Pass the Token , Username , Password and the Lnaguage as headers in the below fields.
+				
+		responses=service.DoSpeechToText(request_stream(),_TIMEOUT_SECONDS_STREAM,metadata=(('token',"your_token"),('lang','lang_code'),('accesskey','your_accesskey'),('audioformat','wav'),('encoding','pcm')))
+		
 		
 		for response in responses:
 			print(response.transcript)
@@ -100,12 +102,12 @@ if __name__ == '__main__':
 	'''
 		API URL goes here.
 	'''
-	service = senderObj.createService("35.200.216.56", 80)
+	service = senderObj.createService("API URL 443)
 
 	'''
 		Sample audio sent from audio/ folder. You can send your own audio.
 	'''
-	senderObj.clientChunkStream(service, "audio/a.wav", 1280)
+	senderObj.clientChunkStream(service, "audio/sample.wav", 1280)
 
 
 
