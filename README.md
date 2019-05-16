@@ -124,10 +124,13 @@ Language Codes are as follows :
 
 ## Grpc Error codes 
 <table>
+</tbody>
+</table>
+<table>
 <colgroup>
 <col width="30%" />
 <col width="20%" />
- <col width="50%" />
+<col width="50%" />
 </colgroup>
  <tbody>
  <thead>
