@@ -124,7 +124,8 @@ Language Codes are as follows :
 
 ## Grpc Error codes 
 <table>
-</tbody>
+<tbody>
+ </tbody>
 </table>
 <table>
 <colgroup>
