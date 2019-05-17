@@ -1,27 +1,27 @@
-## Welcome to GNANI Api Service
+## Welcome to GNANI API Service
 
-Use our Api to convert your Speech to Text
+Use our API to convert your Speech to Text
 
-Here is a quick set-up guide to integrate Gnani speech Api into your system.
+Here is a quick set-up guide to integrate Gnani speech API into your system.
 
-Gnani speech Api supports multiple languages:
+Gnani speech API supports multiple languages:
 - Kannada
 - Hindi
 - Indian English
 - Tamil
 - Telugu
-- Gujarathi
+- Gujarati
 
 ## Authentication 
-To get access to our Api's visit [gnani.ai](https://gnani.ai/ApiRequest) to register yourself.
+To get access to our API's visit [gnani.ai](https://gnani.ai/ApiRequest) to register yourself.
 
 ## Prequisites for setting up the API
-1. At the time of registration the token,accesskey would have been mailed to your registered email id without which you will not be authenticated to access our api's
-2. API URL : [asr.gnani.ai]
-3. Audio Format Supported - wav
-4. Audio Sampling Rate - 16k Hz
-5. Channels - mono
-6. Encoding Format - pcm 16 
+- At the time of registration the token,accesskey and certificate would have been mailed to your registered email id without which you will not be authenticated to access our api's
+- API URL : [asr.gnani.ai](https://asr.gnani.ai)
+- Audio Format Supported - wav
+- Audio Sampling Rate - 16k Hz
+- Channels - mono
+- Encoding Format - pcm 16 
 
 ### Note
 Language Codes are as follows :
@@ -101,6 +101,8 @@ Language Codes are as follows :
 </tbody>
 </table>
 
+- You are required to add certficate (cert.pem) that was sent to the registered email id as the part of your code.
+
 ### Note 
 - Your request will not be authenticated if you fail to add any of these headers to your request.
 - We currently support streaming through GRPC and audio with the following properties:
@@ -178,4 +180,4 @@ We will be adding other languages soon.
 
 ### Support or Contact
 
-If you are having trouble please raise an issue or mail to us at email_id
+If you are having trouble please raise an issue or mail to us at > operations@gnani.ai
