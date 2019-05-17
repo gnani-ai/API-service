@@ -121,7 +121,55 @@ Language Codes are as follows :
 </tbody>
 </table>
   * We will be supporting different audio properties soon.
-  
+
+## Grpc Error codes 
+<table>
+<tbody>
+ </tbody>
+</table>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="20%" />
+<col width="50%" />
+</colgroup>
+ <tbody>
+ <thead>
+<tr class="header">
+<th>Code</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tr>
+<td markdown="span">OK</td>
+<td markdown="span">0</td>
+<td markdown="span">No error. Request is processed.</td>
+</tr>
+<tr>
+<td markdown="span">CANCELLED</td>
+<td markdown="span">1</td>
+<td markdown="span">Operation was cancelled by the caller.</td>
+</tr>
+<tr>
+<td markdown="span">PERMISSION_DENIED</td>
+<td markdown="span">7</td>
+<td markdown="span">The caller does not have permission to execute the specified operation. This occur if there is any issue in the header sent by the caller.</td>
+</tr>
+<tr>
+<td markdown="span">INTERNAL</td>
+<td markdown="span">13</td>
+<td markdown="span">This means that some invariants expected by the underlying system have been broken. You can fnd the custom error details sent through grpc_message.
+ Example : grpc_message":"Token is Invalid!</td>
+</tr>
+  <tr>
+<td markdown="span">UNAVAILABLE</td>
+<td markdown="span">14</td>
+<td markdown="span">The server is currently unavailable.</td>
+</tr>
+</tbody>
+</table>
+
 ## Sample Code
 Here are the list of sample codes for Python and Nodejs.
 - Python :[Link]
