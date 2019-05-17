@@ -13,15 +13,15 @@ Gnani speech Api supports multiple languages:
 - Gujarathi
 
 ## Authentication 
-To get access to our Api's visit [Link](https://gnani.ai) to register yourself.
+To get access to our Api's visit [gnani.ai](https://gnani.ai/ApiRequest) to register yourself.
 
 ## Prequisites for setting up the API
 1. At the time of registration the token,accesskey would have been mailed to your registered email id without which you will not be authenticated to access our api's
-2. API URL : [Link](https://gnani.ai)
-3. Audio Format Supported - Wav
-4. Audio Sampling Rate - 16000 or 8000
-5. Channels - Mono
-6. Encoding Format - PCM 16 bit
+2. API URL : [asr.gnani.ai]
+3. Audio Format Supported - wav
+4. Audio Sampling Rate - 16k Hz
+5. Channels - mono
+6. Encoding Format - pcm 16 
 
 ### Note
 Language Codes are as follows :
@@ -32,8 +32,8 @@ Language Codes are as follows :
 </colgroup>
 <thead>
 <tr class="header">
-<th>Field</th>
-<th>Description</th>
+<th>Language</th>
+<th>Code</th>
 </tr>
 </thead>
 <tbody>
@@ -65,7 +65,7 @@ Language Codes are as follows :
 </table>
 
 ## How to setup the API
-- In your client grpc code , you are required to pass headers along with the audio chunks. The headers must contain token,accesskey sent to your email id , the language that you want to use ,audioformat and encoding type as key value pairs. The format to be followed is below : 
+- In your client grpc code , you are required to pass headers along with the audio chunks. The headers must contain token,accesskey sent to your email id , the language that you want to use , audioformat and encoding type as key value pairs. The format to be followed is below : 
 <table>
 <colgroup>
 <col width="30%" />
@@ -116,7 +116,7 @@ Language Codes are as follows :
 </tr>
 <tr>
 <td markdown="span">Encoding Format</td>
-<td markdown="span">pcm 16 bit</td>
+<td markdown="span">pcm 16 </td>
 </tr>
 </tbody>
 </table>

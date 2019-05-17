@@ -1,1 +1,2 @@
 grpcio==1.19.0
+grpcio_tools==1.19.0

@@ -12,7 +12,7 @@ _TIMEOUT_SECONDS_STREAM = 1000
 
 class Sender:
 
-	def clientChunkStream(self, service, filename, chunkSize=1024,):
+	def clientChunkStream(self, service, filename, chunkSize=1024,token,accesskey,encoding,lang_code,audioformat):
 
 		def request_stream():
 			for item in self.generate_chunks(filename, grpc_on=True, chunkSize=chunkSize):
@@ -21,7 +21,7 @@ class Sender:
 	    
 		#Pass the Token , Username , Password and the Lnaguage as headers in the below fields.
 				
-		responses=service.DoSpeechToText(request_stream(),_TIMEOUT_SECONDS_STREAM,metadata=(('token',"your_token"),('lang','lang_code'),('accesskey','your_accesskey'),('audioformat','wav'),('encoding','pcm')))
+		responses=service.DoSpeechToText(request_stream(),_TIMEOUT_SECONDS_STREAM,metadata=(('token',token),('lang',lang_code),('accesskey',accesskey),('audioformat',audioformat),('encoding',encoding)))
 		
 		
 		for response in responses:
@@ -41,7 +41,7 @@ class Sender:
 		return stt_pb2_grpc.ListenerStub(channel)
 
 	# create an iterator that yields chunks in raw or grpc format
-	def generate_chunks(self,filename, grpc_on=False, chunkSize=1280,username="",password=""):
+	def generate_chunks(self,filename, grpc_on=False, chunkSize=1280):
 		# raw byte file
 		if '.raw' in filename:
 			f = open(filename, 'rb')
@@ -85,15 +85,6 @@ class Sender:
 
 				raise StopIteration
 
-		else:
-			raise StopIteration
-
-
-
-
-
-
-
 
 if __name__ == '__main__':
 
@@ -102,12 +93,19 @@ if __name__ == '__main__':
 	'''
 		API URL goes here.
 	'''
-	service = senderObj.createService("API URL 443)
+	service = senderObj.createService("API URL", 443)
 
 	'''
+		Set your token , accesskey , encoding , lang_code , audioformat to the below fields.
 		Sample audio sent from audio/ folder. You can send your own audio.
 	'''
-	senderObj.clientChunkStream(service, "audio/sample.wav", 1280)
+	token='your_token'
+	accesskey='your_accesskey'
+	encoding='pcm'
+	lang_code='choose your langugae'
+	audioformat='wav'
+
+	senderObj.clientChunkStream(service, "audio/eng.wav", 1280,token,accesskey,encoding,lang_code,audioformat)
 
 
 
