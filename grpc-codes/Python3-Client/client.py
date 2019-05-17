@@ -12,14 +12,11 @@ _TIMEOUT_SECONDS_STREAM = 1000
 
 class Sender:
 
-	def clientChunkStream(self, service, filename, chunkSize=1024,token,accesskey,encoding,lang_code,audioformat):
+	def clientChunkStream(self, service, filename,token,accesskey,encoding,lang_code,audioformat, chunkSize=1024):
 
 		def request_stream():
 			for item in self.generate_chunks(filename, grpc_on=True, chunkSize=chunkSize):
 				yield item
-
-	    
-		#Pass the Token , Username , Password and the Lnaguage as headers in the below fields.
 				
 		responses=service.DoSpeechToText(request_stream(),_TIMEOUT_SECONDS_STREAM,metadata=(('token',token),('lang',lang_code),('accesskey',accesskey),('audioformat',audioformat),('encoding',encoding)))
 		
@@ -27,7 +24,6 @@ class Sender:
 		for response in responses:
 			print(response.transcript)
 			# print("transcription:::",response.transcript.decode("UTF-8","ignore"))
-
 
 	def createService(self, ipaddr, port):
 		'''
@@ -55,8 +51,6 @@ class Sender:
 				else:
 					raise StopIteration
 
-
-
 		# wav file format
 		elif '.wav' in filename:
 			audio = wave.open(filename)
@@ -76,7 +70,7 @@ class Sender:
 
 				if grpc_on:
 					sent=chunk
-					yield stt_pb2.SpeechChunk(content=chunk, token=username+password)
+					yield stt_pb2.SpeechChunk(content=chunk)
 				else:
 					yield chunk
 			else:
@@ -105,7 +99,7 @@ if __name__ == '__main__':
 	lang_code='choose your langugae'
 	audioformat='wav'
 
-	senderObj.clientChunkStream(service, "audio/eng.wav", 1280,token,accesskey,encoding,lang_code,audioformat)
+	senderObj.clientChunkStream(service, "audio/eng.wav",token,accesskey,encoding,lang_code,audioformat,1280)
 
 
 
