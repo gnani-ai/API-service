@@ -105,6 +105,7 @@ Language Codes are as follows :
 
 ### Note 
 - Your request will not be authenticated if you fail to add any of these headers to your request.
+- Each registered user can only send 1000 grpc requests beyond which the user will be blocked. If you want to opt for         extension , please send a mail to operations@gnani.ai
 - We currently support streaming through GRPC and audio with the following properties:
 <table>
 <colgroup>
@@ -180,4 +181,4 @@ We will be adding other languages soon.
 
 ### Support or Contact
 
-If you are having trouble please raise an issue or mail to us at > operations@gnani.ai
+If you are having trouble please raise an issue or mail to us at operations@gnani.ai
