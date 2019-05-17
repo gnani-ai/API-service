@@ -171,8 +171,8 @@ Language Codes are as follows :
 </table>
 
 ## Sample Code
-Here are the list of sample codes for Python and Nodejs.
-- Python :[Link]
+Here are the list of sample codes for Python.
+- [Python](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Python3-Client)
 
 We will be adding other languages soon.
 
