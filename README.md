@@ -13,15 +13,15 @@ Gnani speech API supports multiple languages:
 - Gujarati
 
 ## Authentication 
-To get access to our API's visit [gnani.ai](https://gnani.ai/ApiRequest) to register yourself.
+To get access to our API(s) visit [gnani.ai](https://gnani.ai/ApiRequest) to register yourself.
 
 ## Prequisites for setting up the API
-- At the time of registration the token,accesskey and certificate would have been mailed to your registered email id without which you will not be authenticated to access our api's
+- Token, accesskey and certificate received from gnani to your registered email id. This is mandatory to access the api.
 - API URL : [asr.gnani.ai](https://asr.gnani.ai)
 - Audio Format Supported - wav
-- Audio Sampling Rate - 16k Hz
-- Channels - mono
-- Encoding Format - pcm 16 
+- Audio Sampling Rate - 16kHz
+- Number of Channels - 1
+- Encoding Format - pcm16 
 
 ### Note
 Language Codes are as follows :
@@ -65,7 +65,7 @@ Language Codes are as follows :
 </table>
 
 ## How to setup the API
-- In your client grpc code , you are required to pass headers along with the audio chunks. The headers must contain token,accesskey sent to your email id , the language that you want to use , audioformat and encoding type as key value pairs. The format to be followed is below : 
+- In your client grpc code, you are required to pass headers along with the audio chunks. The headers must contain token,accesskey sent to your email id, the language that you want to use, audioformat and encoding type as key value pairs. For example, the format to be followed is below : 
 <table>
 <colgroup>
 <col width="30%" />
@@ -96,12 +96,12 @@ Language Codes are as follows :
 </tr>
   <tr>
 <td markdown="span">encoding</td>
-<td markdown="span">pcm 16</td>
+<td markdown="span">pcm16</td>
  </tr>
 </tbody>
 </table>
 
-- You are required to add certficate (cert.pem) that was sent to the registered email id as the part of your code.
+- You are required to add certficate (cert.pem) that was sent to the registered email id as part of your code.
 
 ### Note 
 - Your request will not be authenticated if you fail to add any of these headers to your request.
@@ -119,11 +119,11 @@ Language Codes are as follows :
 </tr>
 <tr>
 <td markdown="span">Encoding Format</td>
-<td markdown="span">pcm 16 </td>
+<td markdown="span">pcm16 </td>
 </tr>
 </tbody>
 </table>
-  * We will be supporting different audio properties soon.
+  * We will be supporting audio with different soon.
 
 ## Grpc Error codes 
 <table>
