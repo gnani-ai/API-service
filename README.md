@@ -17,7 +17,8 @@ To get access to our API(s) visit [gnani.ai](https://gnani.ai/ApiRequest) to reg
 
 ## Prequisites for setting up the API
 - Token, accesskey and certificate received from gnani to your registered email id. This is mandatory to access the api.
-- API URL : [asr.gnani.ai](https://asr.gnani.ai)
+- API URL : asr.gnani.ai
+- PORT: 443
 - Audio Format Supported - wav
 - Audio Sampling Rate - 16kHz
 - Number of Channels - 1
