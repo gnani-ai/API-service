@@ -88,10 +88,8 @@ if __name__ == '__main__':
 
 	senderObj = Sender()
 
-	'''
-		API URL goes here.
-	'''
-	service = senderObj.createService("API URL", 443)
+	#API URL
+	service = senderObj.createService("asr.gnani.ai", 443)
 
 	'''
 		Set your token , accesskey , encoding , lang_code , audioformat in the config map.
@@ -103,7 +101,7 @@ if __name__ == '__main__':
 	lang_code=parser.get('USER', 'LANGUAGE_CODE')
 	audioformat=parser.get('USER', 'AUDIOFORMAT')
 
-	senderObj.clientChunkStream(service,"audio/eng.wav",token,accesskey,encoding,lang_code,audioformat,1280)
+	senderObj.clientChunkStream(service,"audio/english.wav",token,accesskey,encoding,lang_code,audioformat,1280)
 
 
 
