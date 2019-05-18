@@ -168,7 +168,7 @@ Language Codes are as follows :
   <tr>
 <td markdown="span">UNAVAILABLE</td>
 <td markdown="span">14</td>
-<td markdown="span">The server is currently unavailable.</td>
+<td markdown="span">The server is currently unavailable. Please wait for sometime and retry. If the problem persists contact operations@gnani.ai or raise an issue on github.</td>
 </tr>
 </tbody>
 </table>
