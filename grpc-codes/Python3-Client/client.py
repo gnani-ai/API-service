@@ -89,7 +89,7 @@ if __name__ == '__main__':
 	senderObj = Sender()
 
 	#API URL
-	service = senderObj.createService("asr.gnani.ai", 443)
+	service = senderObj.createService(parser.get('USER', 'API_URL'), 443)
 
 	'''
 		Set your token , accesskey , encoding , lang_code , audioformat in the config map.
