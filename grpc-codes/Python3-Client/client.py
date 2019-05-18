@@ -7,6 +7,12 @@ import grpc
 import proto.stt_pb2 as stt_pb2
 import time
 import wave
+from configparser import ConfigParser
+
+#Reading from config file
+parser = ConfigParser()
+parser.read('user.config')
+
 _TIMEOUT_SECONDS = 10
 _TIMEOUT_SECONDS_STREAM = 1000
 
@@ -20,10 +26,8 @@ class Sender:
 				
 		responses=service.DoSpeechToText(request_stream(),_TIMEOUT_SECONDS_STREAM,metadata=(('token',token),('lang',lang_code),('accesskey',accesskey),('audioformat',audioformat),('encoding',encoding)))
 		
-		
 		for response in responses:
 			print(response.transcript)
-			# print("transcription:::",response.transcript.decode("UTF-8","ignore"))
 
 	def createService(self, ipaddr, port):
 		'''
@@ -70,6 +74,7 @@ class Sender:
 
 				if grpc_on:
 					sent=chunk
+					time.sleep(0.040)
 					yield stt_pb2.SpeechChunk(content=chunk)
 				else:
 					yield chunk
@@ -78,7 +83,6 @@ class Sender:
 				self.last_chunk_time=time.time()
 
 				raise StopIteration
-
 
 if __name__ == '__main__':
 
@@ -90,16 +94,16 @@ if __name__ == '__main__':
 	service = senderObj.createService("API URL", 443)
 
 	'''
-		Set your token , accesskey , encoding , lang_code , audioformat to the below fields.
+		Set your token , accesskey , encoding , lang_code , audioformat in the config map.
 		Sample audio sent from audio/ folder. You can send your own audio.
 	'''
-	token='your_token'
-	accesskey='your_accesskey'
-	encoding='pcm'
-	lang_code='choose your langugae'
-	audioformat='wav'
+	token=parser.get('USER', 'TOKEN')
+	accesskey=parser.get('USER', 'ACCESSKEY')
+	encoding=parser.get('USER', 'ENCODING')
+	lang_code=parser.get('USER', 'LANGUAGE_CODE')
+	audioformat=parser.get('USER', 'AUDIOFORMAT')
 
-	senderObj.clientChunkStream(service, "audio/eng.wav",token,accesskey,encoding,lang_code,audioformat,1280)
+	senderObj.clientChunkStream(service,"audio/eng.wav",token,accesskey,encoding,lang_code,audioformat,1280)
 
 
 

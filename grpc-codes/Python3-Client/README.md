@@ -1,6 +1,7 @@
 # Grpc python stream client
 
 ## Installation
+- Open user.config 
 - apt-get install python3.6
 - apt-get install python3-pip
 - pip3 install -r requirements.txt
