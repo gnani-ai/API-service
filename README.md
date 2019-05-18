@@ -164,8 +164,7 @@ Language Codes are as follows :
 <td markdown="span">INTERNAL</td>
 <td markdown="span">13</td>
 <td markdown="span">This means that some invariants expected by the underlying system have been broken. You can fnd the custom error details sent through grpc_message.
- Example : grpc_message:"Token is Invalid!"
-grpc_message: "Free quota is over!"</td>
+ Example : grpc_message:"Token is Invalid!" , "Free quota is over!"</td>
 </tr>
   <tr>
 <td markdown="span">UNAVAILABLE</td>
