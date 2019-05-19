@@ -70,7 +70,7 @@ Language Codes are as follows :
 <table>
 <colgroup>
 <col width="30%" />
-<col width="60%" />
+<col width="70%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -81,7 +81,7 @@ Language Codes are as follows :
 <tbody>
 <tr>
 <td markdown="span">token</td>
-<td markdown="span">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9ey</td>
+<td markdown="span">eyJhbGciOiJIUzI1NiIsInR5cCI</td>
 </tr>
 <tr>
 <td markdown="span">lang</td>
@@ -89,7 +89,7 @@ Language Codes are as follows :
 </tr>
  <tr>
 <td markdown="span">acesskey</td>
-<td markdown="span">7f550a9f4c44173a37664d938f1355f0f92a47a7</td>
+<td markdown="span">7f550a9f4c44173a37664d938f1</td>
  </tr>
  <tr>
 <td markdown="span">audioformat</td>
