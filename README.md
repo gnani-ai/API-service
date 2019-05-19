@@ -81,7 +81,8 @@ Language Codes are as follows :
 <tbody>
 <tr>
 <td markdown="span">token</td>
-<td markdown="span">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibm
+<td markdown="span">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+ .eyJzdWIiOiIxMjM0NTY3ODkwIiwibm
  FtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</td>
 </tr>
 <tr>
@@ -136,7 +137,7 @@ If you wish to opt for extension , please send a mail to operations@gnani.ai
 <colgroup>
 <col width="30%" />
 <col width="20%" />
-<col width="50%" />
+<col width="30%" />
 </colgroup>
  <tbody>
  <thead>
