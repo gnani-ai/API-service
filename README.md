@@ -81,7 +81,7 @@ Language Codes are as follows :
 <tbody>
 <tr>
 <td markdown="span">token</td>
-<td markdown="span">eyJhbGciOiJIUzI1NiIsInR5cCIeyJhbGciOiJIUzI1NiI</td>
+<td markdown="span">eyJhbGciOiJIUzI1NiIsInR5cCI/td>
 </tr>
 <tr>
 <td markdown="span">lang</td>
