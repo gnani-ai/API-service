@@ -81,7 +81,8 @@ Language Codes are as follows :
 <tbody>
 <tr>
 <td markdown="span">token</td>
-<td markdown="span">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</td>
+<td markdown="span">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibm
+ FtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ</td>
 </tr>
 <tr>
 <td markdown="span">lang</td>
@@ -106,7 +107,8 @@ Language Codes are as follows :
 
 ### Note 
 - Your request will not be authenticated if you fail to add any of these headers to your request.
-- Each registered user can only send 1000 grpc requests beyond which the user will be blocked. If you want to opt for         extension , please send a mail to operations@gnani.ai
+- Each registered user can only send 1000 grpc requests beyond which the user will be blocked. 
+If you wish to opt for extension , please send a mail to operations@gnani.ai
 - We currently support streaming through GRPC and audio with the following properties:
 <table>
 <colgroup>
@@ -124,7 +126,6 @@ Language Codes are as follows :
 </tr>
 </tbody>
 </table>
-  * We will be supporting audio with different soon.
 
 ## Grpc Error codes 
 <table>
