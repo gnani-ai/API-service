@@ -13,7 +13,7 @@ Gnani speech API supports multiple languages:
 - Gujarati
 
 ## Authentication 
-To get access to our API(s) visit [gnani.ai](https://gnani.ai/ApiRequest) to register yourself.
+To get access to our API(s) visit [gnani.ai](https://gnani.ai/apirequest) to register yourself.
 
 ## Prequisites for setting up the API
 - Token, accesskey and certificate received from gnani to your registered email id. This is mandatory to access the api.
