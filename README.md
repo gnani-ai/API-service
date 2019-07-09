@@ -106,7 +106,7 @@ Language Codes are as follows :
 
 ### Note 
 - Your request will not be authenticated if you fail to add any of these headers to your request.
-- Each registered user can only send 1000 grpc requests beyond which the user will be blocked. 
+- Each registered user can only send 250 grpc requests of 15 seconds audio each, beyond which the user will be blocked. 
 If you wish to opt for extension , please send a mail to operations@gnani.ai
 - We currently support streaming through GRPC and audio with the following properties:
 <table>
@@ -178,9 +178,7 @@ If you wish to opt for extension , please send a mail to operations@gnani.ai
 Here are the list of sample codes.
 - [Python](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Python3-Client)
 
-We will be adding other languages soon.
-
 ### Support or Contact
 
 #### Disclaimer
-The Speech APIs are completely proprietary and are the sole property of Gnani.ai. We reserve the right to remove users' access at any point of time. Note that the free access to the APIs are purely for testing or experimental purposes, and will be available to the users for a limited amount of time, after which they will have to purchase the commercial version. Gnani.ai will immediately remove access if the user is found to be using the APIs for commercial purposes. If you wish to obtain unlimited access, you can make an enquiry on the website or write to us at operations@gnani.ai. Also if you are having trouble please raise an issue or mail to us at operations@gnani.ai
+The Speech APIs are completely proprietary and are the sole property of Gnani.ai. We reserve the right to remove users access at any point of time. Note that the free access to the APIs are purely for testing or experimental purposes, and will be available to the users for a limited amount of time, after which they will have to purchase the commercial version. Gnani.ai will immediately remove access if the user is found to be using the APIs for commercial purposes. If you wish to obtain unlimited access, you can make an enquiry on the website or write to us at operations@gnani.ai. Also if you are having trouble please raise an issue or mail to us at operations@gnani.ai
