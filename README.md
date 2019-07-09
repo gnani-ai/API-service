@@ -158,7 +158,8 @@ If you wish to opt for extension , please send a mail to operations@gnani.ai
 <tr>
 <td markdown="span">PERMISSION_DENIED</td>
 <td markdown="span">7</td>
-<td markdown="span">The caller does not have permission to execute the specified operation. This occur if there is any issue in the header sent by the caller.</td>
+<td markdown="span">The caller does not have permission to execute the specified operation. This occur if there is any issue in the header sent by the caller.
+Example : grpc_message:"You are not authorised to use this language"</td>
 </tr>
 <tr>
 <td markdown="span">INTERNAL</td>
