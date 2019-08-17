@@ -106,8 +106,7 @@ Language Codes are as follows :
 
 ### Note 
 - Your request will not be authenticated if you fail to add any of these headers to your request.
-- Each registered user can only send 250 grpc requests of 15 seconds audio each, beyond which the user will be blocked. 
-If you wish to opt for extension , please send a mail to operations@gnani.ai
+- Each registered user can only send 250 grpc requests of 15 seconds audio each, beyond which the user will be blocked. Also, user is allowed to send only 5 concurrent requests per second. If you wish to opt for extension , please send a mail to operations@gnani.ai
 - We currently support streaming through GRPC and audio with the following properties:
 <table>
 <colgroup>
