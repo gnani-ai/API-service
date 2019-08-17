@@ -37,9 +37,9 @@ In the user.config file check if the following details are updated.
 
 API_URL=asr.gnani.ai:443
 
-TOKEN=<token provided by gnani.ai>
+TOKEN=(token provided by gnani.ai)
 
-ACCESSKEY=<access key provided by gnani.ai>
+ACCESSKEY=(access key provided by gnani.ai)
 
 ENCODING=pcm16
 
