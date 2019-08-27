@@ -118,7 +118,7 @@ public:
         SpeechChunk chunk;
         chunk.set_content(str);
         //Adding delay of 0.04s between chunks
-        this_thread::sleep_for(chrono::milliseconds(40));
+        //this_thread::sleep_for(chrono::milliseconds(40));
         if (!stream->Write(chunk))
           break;
 
