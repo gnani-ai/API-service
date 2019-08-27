@@ -74,7 +74,7 @@ class Sender:
 
 				if grpc_on:
 					sent=chunk
-					time.sleep(0.040)
+					# time.sleep(0.040)
 					yield stt_pb2.SpeechChunk(content=chunk)
 				else:
 					yield chunk
