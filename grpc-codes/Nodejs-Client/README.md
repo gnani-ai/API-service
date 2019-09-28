@@ -37,7 +37,7 @@ This requires Administrator privileges, and you may need to authenticate
 - To ensure Node.js has been installed, run node -v in your terminal - you should get something like v10.3.5
 - `node -v`
 - Update your version of npm with npm install npm --global
-- `sudo npm install npm --global`
+- `npm install npm --global`
 - `npm -v`
 
 - After installing nodejs and npm go to the directory : `cd grpc-nodejs-client/` and install the dependencies : `npm install`
