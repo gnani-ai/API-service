@@ -179,6 +179,7 @@ Here are the list of sample codes.
 - [Python](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Python3-Client)
 - [Cpp](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Cpp-Client)
 - [NodeJs](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Nodejs-Client) 
+- [Java](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/grpc-java-client) 
 
 ### Support or Contact
 
