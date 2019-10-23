@@ -1,5 +1,8 @@
 # Nodejs Client
 
+### Note 
+- The rest services are for restricted users only. If you wish to opt for rest services , please contact operations@gnani.ai
+
 ## Installation
 
 Code tested with nodejs version 10.x (latest LTS version) and npm version 6.x

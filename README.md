@@ -176,10 +176,14 @@ Example : grpc_message:"You are not authorised to use this language"</td>
 
 ## Sample Code
 Here are the list of sample codes.
+GRPC Codes
 - [Python](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Python3-Client)
 - [Cpp](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Cpp-Client)
 - [NodeJs](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Nodejs-Client) 
 - [Java](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/grpc-java-client) 
+
+REST Codes
+- [NodeJs](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Nodejs-Client)
 
 ### Support or Contact
 

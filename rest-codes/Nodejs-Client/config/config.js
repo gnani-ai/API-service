@@ -6,7 +6,7 @@ module.exports = {
     ENCODING: 'pcm16',
     LANGUAGE_CODE: 'eng_IN', //Add your language code
     AUDIOFORMAT: 'wav',
-    CERT_FILE_PATH: './config/cert.pem', //update the cert.pem file by replacing it with new cert.pem file
+    CERT_FILE_PATH: './config/chain.pem', //update the cert.pem file by replacing it with new cert.pem file
     ENG_AUDIO:'./audio/english.wav',
     KAN_AUDIO:'./audio/kannada.wav',
     HIN_AUDIO:'./audio/hindi.wav',
