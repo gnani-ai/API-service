@@ -184,7 +184,7 @@ GRPC Codes
 - [Java](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/grpc-java-client) 
 
 REST Codes
-- [NodeJs](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Nodejs-Client)
+- [NodeJs](https://github.com/gnani-ai/API-service/tree/master/rest-codes/Nodejs-Client)
 
 ### Support or Contact
 
