@@ -26,7 +26,7 @@ function statusRequest(options) {
         var requestLoop = setInterval(function () {
             request.post(options, function optionalCallback(err, response, body) {
                 //the request loop will work till 10 minutes
-                if (counter == 120) {
+                if (counter == 60) {
                     clearInterval(requestLoop);
                     failure("Sorry, there is some issue while getting your response!");
                 }
