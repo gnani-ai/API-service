@@ -2,12 +2,19 @@ var request = require('request')
 var fs = require('fs')
 var config = require('./config/config');
 
-//function to upload the audio file on server
+/**
+ * Method to upload audio file on server for speech to text conversion
+ * 
+ * @param {object} options Contains the api url, header details
+ * @param {string} audioFilePath path to audio file
+ * @returns Promise success or failure according to the response from server for audio file status
+ */
 function uploadRequest(options, audioFilePath) {
     return new Promise(function (success, failure) {
         var r = request.post(options, function optionalCallback(err, response, body) {
             if (!err && response.statusCode == 200) {
                 console.log('Audio File uploading is successful!')
+                console.log('The transcript_key generated for audio :' + body)
                 success(body);
             } else {
                 failure(err);
@@ -18,34 +25,48 @@ function uploadRequest(options, audioFilePath) {
     });
 }
 
-//function to get the status of the uploaded file 
+/**
+ * Method to get the status of the uploaded file
+ * 
+ * @param {object} options Contains the api url, header details
+ * @returns Promise success or failure according to the response from server for audio file status
+ */
 function statusRequest(options) {
     return new Promise(function (success, failure) {
         var counter = 1;
-        //requesting status of the uploaded file every 10 seconds
+        //requesting status of the uploaded file every minute
         var requestLoop = setInterval(function () {
             request.post(options, function optionalCallback(err, response, body) {
                 //the request loop will work till 10 minutes
-                if (counter == 60) {
+                if (counter == 10) {
                     clearInterval(requestLoop);
                     failure("Sorry, there is some issue while getting your response!");
                 }
                 counter++;
                 if (!err && response.statusCode == 200) {
-                    if (body != 'Decoding in progress') {
+                    if (body === 'Decoding in progress') {
+                        console.log('Decoding in progress...')
+                    } else {
                         clearInterval(requestLoop);
                         success(body);
                     }
-                    console.log(body)
                 } else {
                     clearInterval(requestLoop);
                     failure("Sorry, there is some issue while getting your response!");
                 }
             });
-        }, 10000);
+        }, 60000);
     });
 }
-
+/**
+ * Main Method  
+ * 
+ * Setting the language code, audiofile path, options object for rest requests
+ * Requesting audio file upload using uploadRequest
+ * Requesting status for audio file using statusRequest
+ * 
+ * @returns JSON result
+ */
 function main() {
     try {
         var langCode = config.LANGUAGE_CODE;
@@ -80,6 +101,7 @@ function main() {
 
         } else {
 
+            // object containing the request details including api url, headers and certificate file
             var options = {
                 url: config.API_URL_UPLOAD,
                 headers: {
@@ -92,11 +114,13 @@ function main() {
                 cert: fs.readFileSync(config.CERT_FILE_PATH),
                 rejectUnauthorized: false
             };
+
             //uploading the audio file on server
             uploadRequest(options, audioFilePath).then(function (result) {
-                // console.log('got the response')
+
+                // result contains the transcript_key 
                 transcript_key = result;
-                // console.log(result);
+                // object containing the request details including api url, headers and certificate file
                 var statusOptions = {
                     url: config.API_URL_STATUS + "?transcript_key=" + transcript_key,
                     headers: {
@@ -109,10 +133,13 @@ function main() {
                     cert: fs.readFileSync(config.CERT_FILE_PATH),
                     rejectUnauthorized: false,
                 };
+                console.log("Please wait for a few moments, gnani.ai is working!")
                 //checking the status of audio file after uploading
                 return statusRequest(statusOptions);
-            }).then(function (result2) {
-                return result2;
+            }).then(function (result) {
+                // Audio to text result 
+                console.log("Audio to text result :")
+                console.log(result);
             }).catch(function (error) {
                 console.log(error);
             });
@@ -121,5 +148,5 @@ function main() {
         console.log(error.message);
     }
 }
-
+//main method called here
 main()
