@@ -185,6 +185,7 @@ GRPC Codes
 
 REST Codes
 - [NodeJs](https://github.com/gnani-ai/API-service/tree/master/rest-codes/Nodejs-Client)
+- [Python](https://github.com/gnani-ai/API-service/tree/master/rest-codes/Python-Client)
 
 ### Support or Contact
 
