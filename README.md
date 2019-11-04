@@ -181,7 +181,7 @@ GRPC Codes
 - [Python](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Python3-Client)
 - [Cpp](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Cpp-Client)
 - [NodeJs](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Nodejs-Client) 
-- [Java](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/grpc-java-client) 
+- [Java](https://github.com/gnani-ai/API-service/tree/master/grpc-codes/Java-Client) 
 
 REST Codes
 - [NodeJs](https://github.com/gnani-ai/API-service/tree/master/rest-codes/Nodejs-Client)
