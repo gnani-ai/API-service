@@ -2,6 +2,8 @@ package com.gnani.httpclient;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.*;
 
 public class App{
     public static void main(String[] args) throws Exception{
@@ -46,12 +48,17 @@ public class App{
             for (int retry = 0; retry < 10; retry++){
                 try{
                     request = new HttpsRequest(api_upload_url);
-                    request.setHeaders("POST", token, accessKey, lang, audioFormat, encoding);
+                    request.setHeaders("POST", token, accessKey, lang, audioFormat, encoding, null);
                     request.uploadRequest(filePath);
-    
-                    // execute the request
-                    transcriptId = request.execute();    
-                    System.out.println("transcriptId = "+transcriptId);
+
+//                     Object response = request.execute();
+                    Object obj = new JSONParser().parse(request.execute());
+          
+                    // typecasting obj to JSONObject 
+                    JSONObject resJson = (JSONObject) obj;
+                    
+                    transcriptId = (String) resJson.get("requestid");
+                    System.out.println("requestid = "+transcriptId);
                     break;
                 }
                 catch(IOException exe)
@@ -82,16 +89,16 @@ public class App{
                     response: Response from the server
             */
 
-            String response = "";
+            JSONObject response = new JSONObject();
             for(int i = 0; i<10; i++)
-            {   
-                    
+            {
                     for (int retry = 0; retry < 10; retry++){
                         try {
-                            request = new HttpsRequest(api_status_url+"?transcript_key="+transcriptId);
-                            request.setHeaders("POST", token, accessKey, lang, audioFormat, encoding);
+                            request = new HttpsRequest(api_status_url);
+                            request.setHeaders("POST", token, accessKey, lang, audioFormat, encoding, transcriptId);
                             // execute the request
-                            response = request.execute();
+                            Object obj = new JSONParser().parse(request.execute()); 
+                            response = (JSONObject) obj;
                             break;
                         } catch (IOException ex) {
                             if (retry == 9) {
@@ -102,19 +109,24 @@ public class App{
                             TimeUnit.SECONDS.sleep(60);
                         }
                     }
-                    if(request.getResponseCode() == 200 && response.contains("Decoding in progress")){
+
+                    String status_result = (String) response.get("status");
+
+                    if(status_result.equalsIgnoreCase("in-progress")){
+                    // if(request.getResponseCode() == 200 && response.contains("Decoding in progress")){
                         System.out.println("Please wait decoding in progress...");
                         //wait time 60 sec
                         TimeUnit.SECONDS.sleep(60);
                     }
-                    else
+                    else if(status_result.equalsIgnoreCase("success"))
                     {
                         System.out.println();
                         System.out.println("Audio to text result in JSON format :");
                         System.out.println();
                         System.out.println(response);
+                        System.out.println();
                         break;
-                    }    
+                    }
             } 
 
         } catch (Exception ex) {

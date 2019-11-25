@@ -69,7 +69,7 @@ public class HttpsRequest {
     }
 
     // set Headers
-    public void setHeaders (String method, String token, String accessKey, String lang, String audioFormat, String encoding) throws ProtocolException{
+    public void setHeaders (String method, String token, String accessKey, String lang, String audioFormat, String encoding, String requestid) throws ProtocolException{
         conn.setRequestMethod(method);
 
         conn.setRequestProperty("token", token); 
@@ -77,7 +77,9 @@ public class HttpsRequest {
         conn.setRequestProperty("accesskey", accessKey);
         conn.setRequestProperty("audioformat", audioFormat);
         conn.setRequestProperty("encoding", encoding);
-
+        if (null != requestid){
+            conn.setRequestProperty("requestid", requestid);
+        }
         conn.setUseCaches(false);
         conn.setDoOutput(true);
         conn.setRequestProperty("Connection", "Keep-Alive");

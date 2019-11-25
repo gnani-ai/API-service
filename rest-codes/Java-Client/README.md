@@ -37,7 +37,7 @@ Code tested with java version 8 (Ubuntu 18.04 latest LTS version) and Apache Mav
 
      * `mvn clean compile assembly:single`
 
-     * `java -jar target/rest-app-1.0.jar`
+     * `java -jar -Djdk.tls.client.protocols="TLSv1,TLSv1.1,TLSv1.2" target/rest-app-1.0.jar`
 #
 # Mac OSX
 
@@ -61,7 +61,7 @@ Code tested with java version 8 (Ubuntu 18.04 latest LTS version) and Apache Mav
 
      * `mvn clean compile assembly:single`
 
-     * `java -jar target/rest-app-1.0.jar`
+     * `java -jar -Djdk.tls.client.protocols="TLSv1,TLSv1.1,TLSv1.2" target/rest-app-1.0.jar`
 #
 # Windows 8/8.1/10
 
@@ -93,7 +93,7 @@ Code tested with java version 8 (Ubuntu 18.04 latest LTS version) and Apache Mav
 
      * `mvn clean compile assembly:single`
 
-     * `java -jar target/rest-app-1.0.jar`
+     * `java -jar -Djdk.tls.client.protocols="TLSv1,TLSv1.1,TLSv1.2" target/rest-app-1.0.jar`
 
 
 
