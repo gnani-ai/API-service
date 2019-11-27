@@ -2,6 +2,7 @@ import requests
 import time
 import logging
 from configparser import ConfigParser
+import json
 
 ''' Reading from config file '''
 parser = ConfigParser()
@@ -37,13 +38,20 @@ class Sender:
             'audioformat': audioformat,
             'encoding': encoding
         }
+        result = ""
         response = requests.post(
             url=api_upload_url, verify=cert, files=files, headers=headers)
         if response.status_code != 200:
             response.raise_for_status()
-        self.logger.info('File uploaded successfully')
-        self.logger.info('The transcript key generated for audio : '+response.text)
-        return response.text
+        
+        res = response.json()
+        if(res.get('status') == "success"):
+            result = res.get('requestid')
+            self.logger.info('The transcript key generated for audio : '+ result)
+            self.logger.info('File uploaded successfully')
+        
+        return result
+
 
     def audioFileStatus(self, token, accesskey, encoding, lang_code, audioformat, transcript_key_param):
         '''Method getting the status of uploaded audio file for speech to text conversion
@@ -60,26 +68,29 @@ class Sender:
                 response: Response from the server
         '''
         try:
-            PARAMS = {'transcript_key': transcript_key_param}
             headers = {
                 'token': token,
                 'lang': lang_code,
                 'accesskey': accesskey,
                 'audioformat': audioformat,
-                'encoding': encoding
+                'encoding': encoding,
+                'requestid':transcript_key_param
             }
             response = requests.post(
-                url=api_status_url, params=PARAMS, verify=cert, headers=headers)
-
+                url=api_status_url, verify=cert, headers=headers)
             if response.status_code == 200:
-                if response.text == 'Decoding in progress':
-                    self.logger.info('Audio file status : '+response.text)
-                    return 'Progress'
-
-                else:
+                res = response.json()
+                status = res.get('status')
+                if status == 'in-progress':
+                    self.logger.info('Audio file status : '+ status)
+                    return status
+                elif status == 'success':
                     self.logger.info(
                         'Audio to text result : '+response.text)
-                    return 'Success'
+                    return status
+                else :
+                    self.logger.info('Audio to text is not successful!')
+                    return status
             else:
                 self.logger.info(
                     'Sorry, there is some issue while getting your response!')
@@ -109,7 +120,7 @@ if __name__ == "__main__":
 	Paste the 'chain.pem' mailed to you in the root directory.
 	'''
     cert = "chain.pem"
-    filePath = 'audio/english.wav'
+    filePath = 'audio/kannada.wav'
 
     try:
         '''Response is saved in "result.log" file '''
@@ -119,16 +130,18 @@ if __name__ == "__main__":
         '''uploading audio file on server '''
         transcript_key = senderObj.uploadAudioFile(
             filePath, token, accesskey, encoding, lang_code, audioformat)
-        
-        for retriescount in range(10):
-            time.sleep(60)
-            ''' fetching the status of uploaded audio file '''
-            result = senderObj.audioFileStatus(
-                token, accesskey, encoding, lang_code, audioformat, transcript_key)
-            if result == 'Success':
-                break
-            if result == 'Failure':
-                break
+        if transcript_key is not "":
+            for retriescount in range(10):
+                time.sleep(60)
+                ''' fetching the status of uploaded audio file '''
+                result = senderObj.audioFileStatus(
+                    token, accesskey, encoding, lang_code, audioformat, transcript_key)
+                if result == 'success':
+                    break
+                if result == 'fail':
+                    break
+        else :
+            senderObj.logger.info('Audio to text is not successful!') 
 
     except Exception as ex:
         senderObj.logger.error(str(ex))

@@ -4,7 +4,7 @@ module.exports = {
     TOKEN: '', //Add your token here
     ACCESSKEY: '', //Add your access key here
     ENCODING: 'pcm16',
-    LANGUAGE_CODE: 'eng_IN', //Add your language code
+    LANGUAGE_CODE: 'kan_IN', //Add your language code
     AUDIOFORMAT: 'wav',
     CERT_FILE_PATH: './config/chain.pem', //update the chain.pem file by replacing it with new cert.pem file
     ENG_AUDIO:'./audio/english.wav',

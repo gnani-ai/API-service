@@ -13,9 +13,14 @@ function uploadRequest(options, audioFilePath) {
     return new Promise(function (success, failure) {
         var r = request.post(options, function optionalCallback(err, response, body) {
             if (!err && response.statusCode == 200) {
-                console.log('Audio File uploading is successful!')
-                console.log('The transcript_key generated for audio :' + body)
-                success(body);
+                var jsonResponse = JSON.parse(body)
+                if (jsonResponse.status == 'success') {
+                    console.log('Audio File uploading is successful!')
+                    console.log('The transcript_key generated for audio :' + jsonResponse.requestid)
+                    success(jsonResponse.requestid);
+                } else {
+                    failure("Sorry, your file is not uploaded successfully !");
+                }
             } else {
                 failure(err);
             }
@@ -44,14 +49,19 @@ function statusRequest(options) {
                 }
                 counter++;
                 if (!err && response.statusCode == 200) {
-                    if (body === 'Decoding in progress') {
+                    var jsonResponse = JSON.parse(body)
+                    if (jsonResponse.status == 'in-progress') {
                         console.log('Decoding in progress...')
-                    } else {
+                    } else if (jsonResponse.status == 'success') {
                         clearInterval(requestLoop);
                         success(body);
+                    } else {
+                        clearInterval(requestLoop);
+                        failure("Sorry, the file is not converted successfully!");
                     }
                 } else {
                     clearInterval(requestLoop);
+                    console.log(err)
                     failure("Sorry, there is some issue while getting your response!");
                 }
             });
@@ -122,13 +132,14 @@ function main() {
                 transcript_key = result;
                 // object containing the request details including api url, headers and certificate file
                 var statusOptions = {
-                    url: config.API_URL_STATUS + "?transcript_key=" + transcript_key,
+                    url: config.API_URL_STATUS,
                     headers: {
                         'token': config.TOKEN,
                         'lang': config.LANGUAGE_CODE,
                         'accesskey': config.ACCESSKEY,
                         'audioformat': config.AUDIOFORMAT,
-                        'encoding': config.ENCODING
+                        'encoding': config.ENCODING,
+                        'requestid':transcript_key
                     },
                     cert: fs.readFileSync(config.CERT_FILE_PATH),
                     rejectUnauthorized: false,
