@@ -21,6 +21,8 @@ Here's the abbreviated guide, highlighting the major steps:
 7. Double click on Client.cs file and it should open visual studio.
 
 8. Change accessKey, token and langauge. 
+
+9. Click on Build Gnani.plugin
 ___
 
 
