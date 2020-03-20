@@ -12,6 +12,10 @@ Gnani speech API supports multiple languages:
 - Telugu
 - Gujarati
 - Marathi
+- Bengali
+- Malayalam
+- Punjabi
+- Urdu
 
 ## Authentication 
 To get access to our API(s) visit [gnani.ai](https://gnani.ai/apirequest) to register yourself.
@@ -66,6 +70,22 @@ Language Codes are as follows :
  <tr>
 <td markdown="span">Marathi</td>
 <td markdown="span">mar_IN</td>
+</tr>
+ <tr>
+<td markdown="span">Malayalam</td>
+<td markdown="span">mal_IN</td>
+</tr>
+ <tr>
+<td markdown="span">Bengali</td>
+<td markdown="span">ben_IN</td>
+</tr>
+ <tr>
+<td markdown="span">Punjabi</td>
+<td markdown="span">pun_IN</td>
+</tr>
+ <tr>
+<td markdown="span">Urdu</td>
+<td markdown="span">urd_IN</td>
 </tr>
 </tbody>
 </table>
