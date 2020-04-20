@@ -21,7 +21,7 @@ class Sender:
 	def clientChunkStream(self, service, filename,token,accesskey,encoding,lang_code,audioformat, chunkSize=1024):
 
 		def request_stream():
-			for item in self.generate_chunks(filename, grpc_on=True, chunkSize=chunkSize):
+			for item in self.generate_chunks(filename, audioformat, grpc_on=True, chunkSize=chunkSize):
 				yield item
 				
 		responses=service.DoSpeechToText(request_stream(),_TIMEOUT_SECONDS_STREAM,metadata=(('token',token),('lang',lang_code),('accesskey',accesskey),('audioformat',audioformat),('encoding',encoding)))
@@ -41,7 +41,7 @@ class Sender:
 		return stt_pb2_grpc.ListenerStub(channel)
 
 	# create an iterator that yields chunks in raw or grpc format
-	def generate_chunks(self,filename, grpc_on=False, chunkSize=1280):
+	def generate_chunks(self,filename, audioformat, grpc_on=False, chunkSize=1280):
 		# raw byte file
 		if audioformat in ["raw", "amr-wb"]:
 			f = open(filename, 'rb')
