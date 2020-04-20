@@ -43,7 +43,7 @@ class Sender:
 	# create an iterator that yields chunks in raw or grpc format
 	def generate_chunks(self,filename, grpc_on=False, chunkSize=1280):
 		# raw byte file
-		if '.raw' in filename:
+		if audioformat in ["raw", "amr-wb"]:
 			f = open(filename, 'rb')
 			while True:
 				chunk = f.read(chunkSize)
