@@ -24,10 +24,10 @@ To get access to our API(s) visit [gnani.ai](https://gnani.ai/apirequest) to reg
 - Token, accesskey and certificate received from gnani to your registered email id. This is mandatory to access the api.
 - API URL : asr.gnani.ai
 - PORT: 443
-- Audio Format Supported - wav
-- Audio Sampling Rate - 16kHz
-- Number of Channels - 1
-- Encoding Format - pcm16 
+- Audio Format Supported : wav, amr-wb
+- Audio Sampling Rate : 16kHz
+- Number of Channels : 1
+- Encoding Format : pcm16, amr-wb
 
 ### Note
 Language Codes are as follows :
@@ -118,11 +118,11 @@ Language Codes are as follows :
  </tr>
  <tr>
 <td markdown="span">audioformat</td>
-<td markdown="span">wav</td>
+<td markdown="span">wav (amr-wb for amr-wb type)</td>
 </tr>
   <tr>
 <td markdown="span">encoding</td>
-<td markdown="span">pcm16</td>
+<td markdown="span">pcm16 (amr-wb for amr-wb type)</td>
  </tr>
 </tbody>
 </table>
@@ -141,11 +141,11 @@ Language Codes are as follows :
  <tbody>
 <tr>
 <td markdown="span">Audio Format</td>
-<td markdown="span">wav</td>
+<td markdown="span">wav (amr-wb for amr-wb type)</td>
 </tr>
 <tr>
 <td markdown="span">Encoding Format</td>
-<td markdown="span">pcm16 </td>
+<td markdown="span">pcm16 (amr-wb for amr-wb type)</td>
 </tr>
 </tbody>
 </table>
