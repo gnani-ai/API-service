@@ -81,7 +81,7 @@ Language Codes are as follows :
 </tr>
  <tr>
 <td markdown="span">Punjabi</td>
-<td markdown="span">pa-IN</td>
+<td markdown="span">pa-guru-IN</td>
 </tr>
  <tr>
 <td markdown="span">Urdu</td>
