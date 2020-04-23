@@ -45,47 +45,47 @@ Language Codes are as follows :
 <tbody>
 <tr>
 <td markdown="span">Kannada</td>
-<td markdown="span">kan_IN</td>
+<td markdown="span">kn-IN</td>
 </tr>
 <tr>
 <td markdown="span">English</td>
-<td markdown="span">eng_IN</td>
+<td markdown="span">en-IN</td>
 </tr>
  <tr>
 <td markdown="span">Tamil</td>
-<td markdown="span">tam_IN</td>
+<td markdown="span">ta-IN</td>
 </tr>
 <tr>
 <td markdown="span">Hindi</td>
-<td markdown="span">hin_IN</td>
+<td markdown="span">hi-IN</td>
 </tr>
 <tr>
 <td markdown="span">Telugu</td>
-<td markdown="span">tel_IN</td>
+<td markdown="span">te-IN</td>
 </tr>
   <tr>
 <td markdown="span">Gujarathi</td>
-<td markdown="span">guj_IN</td>
+<td markdown="span">gu-IN</td>
 </tr>
  <tr>
 <td markdown="span">Marathi</td>
-<td markdown="span">mar_IN</td>
+<td markdown="span">mr-IN</td>
 </tr>
  <tr>
 <td markdown="span">Malayalam</td>
-<td markdown="span">mal_IN</td>
+<td markdown="span">ml-IN</td>
 </tr>
  <tr>
 <td markdown="span">Bengali</td>
-<td markdown="span">ben_IN</td>
+<td markdown="span">bn-IN</td>
 </tr>
  <tr>
 <td markdown="span">Punjabi</td>
-<td markdown="span">pun_IN</td>
+<td markdown="span">pa-IN</td>
 </tr>
  <tr>
 <td markdown="span">Urdu</td>
-<td markdown="span">urd_IN</td>
+<td markdown="span">ur-IN</td>
 </tr>
 </tbody>
 </table>
@@ -106,11 +106,11 @@ Language Codes are as follows :
 <tbody>
 <tr>
 <td markdown="span">token</td>
-<td markdown="span">eyJhbGciOiJIUzI1NiIsInR5cCIIUz</td>
+<td markdown="span">eyJhbGcIIUz.iOiJIUzI1NiIs-5cC.N2N2OWxBRUsxT</td>
 </tr>
 <tr>
 <td markdown="span">lang</td>
-<td markdown="span">eng_IN</td>
+<td markdown="span">en-IN</td>
 </tr>
  <tr>
 <td markdown="span">acesskey</td>
