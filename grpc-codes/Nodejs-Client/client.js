@@ -55,6 +55,10 @@ function main() {
             default:
                 audioFilePath = config.TAM_AUDIO;
         }
+        
+        // send audio file name for debugging purpose.
+        meta.add('filename', audioFilePath);
+            
         // Check that the file exists locally
         if (!fs.existsSync(audioFilePath)) {
             console.log("Audio file not found");
