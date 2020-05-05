@@ -86,7 +86,9 @@ public class GrpcClient {
 
 							clientIdKey = Metadata.Key.of("encoding", Metadata.ASCII_STRING_MARSHALLER);
 							headers.put(clientIdKey, p.getProperty("ENCODING"));
-
+							
+							clientIdKey = Metadata.Key.of("filename", Metadata.ASCII_STRING_MARSHALLER);
+							headers.put(clientIdKey, p.getProperty("AUDIO_FILE"));
 
 							applier.apply(headers);
 						} catch(Throwable ex) {
