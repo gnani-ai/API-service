@@ -31,6 +31,7 @@ private void SetUpGrpc()
                 metadata.Add("audioformat", encoding);
                 metadata.Add("encoding", encoding);
                 metadata.Add("sensitive", "Y");
+                metadata.Add('filename', audioFilePath);
                 var call = client.DoSpeechToText(metadata);
                 req = call.RequestStream; //stream is being sent here 
                 res = call.ResponseStream;  //You will recieve data here 
