@@ -24,7 +24,7 @@ class Sender:
 			for item in self.generate_chunks(filename, audioformat, grpc_on=True, chunkSize=chunkSize):
 				yield item
 				
-		responses=service.DoSpeechToText(request_stream(),_TIMEOUT_SECONDS_STREAM,metadata=(('token',token),('lang',lang_code),('accesskey',accesskey),('audioformat',audioformat),('encoding',encoding)))
+		responses=service.DoSpeechToText(request_stream(),_TIMEOUT_SECONDS_STREAM,metadata=(('token',token),('lang',lang_code),('accesskey',accesskey),('audioformat',audioformat),('encoding',encoding),('filename', filename)))
 		
 		for response in responses:
 			print(response.transcript)

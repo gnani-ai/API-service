@@ -8,6 +8,8 @@ sudo apt-get install libgflags-dev libgtest-dev
 
 sudo apt-get install clang libc++-dev
 
+sudo apt-get install libpthread-stubs0-dev 
+
 git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
 
 cd grpc
