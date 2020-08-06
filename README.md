@@ -113,7 +113,7 @@ Language Codes are as follows :
 <td markdown="span">en-IN</td>
 </tr>
  <tr>
-<td markdown="span">acesskey</td>
+<td markdown="span">accesskey</td>
 <td markdown="span">7f550a9f4c44173a37664d938f1</td>
  </tr>
  <tr>
