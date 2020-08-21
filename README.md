@@ -9,8 +9,8 @@ Gnani speech API supports multiple languages:
 - Hindi
 - Indian English
 - Singapore English
-- United Kingdom
-- United States
+- United Kingdom English
+- United States English
 - Uni
 - Tamil
 - Telugu
@@ -52,7 +52,7 @@ Language Codes are as follows :
 <td markdown="span">kn-IN</td>
 </tr>
 <tr>
-<td markdown="span">English</td>
+<td markdown="span">Indian English</td>
 <td markdown="span">en-IN</td>
 </tr>
 <tr>
@@ -60,11 +60,11 @@ Language Codes are as follows :
 <td markdown="span">en-SG</td>
 </tr>
 <tr>
-<td markdown="span">United Kingdom</td>
+<td markdown="span">United Kingdom English</td>
 <td markdown="span">en-GB</td>
 </tr>
 <tr>
-<td markdown="span">United States</td>
+<td markdown="span">United States English</td>
 <td markdown="span">en-US</td>
 </tr>
  <tr>
