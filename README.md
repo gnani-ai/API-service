@@ -11,7 +11,6 @@ Gnani speech API supports multiple languages:
 - Singapore English
 - United Kingdom English
 - United States English
-- Uni
 - Tamil
 - Telugu
 - Gujarati
@@ -134,11 +133,11 @@ Language Codes are as follows :
  </tr>
  <tr>
 <td markdown="span">audioformat</td>
-<td markdown="span">wav (amr-wb for amr-wb type)</td>
+<td markdown="span">wav (if amr-wb audioformat use amr-wb)</td>
 </tr>
   <tr>
 <td markdown="span">encoding</td>
-<td markdown="span">pcm16 (amr-wb for amr-wb type)</td>
+<td markdown="span">pcm16 (if amr-wb audioformat use amr-wb as encoding style)</td>
  </tr>
 </tbody>
 </table>
@@ -157,11 +156,11 @@ Language Codes are as follows :
  <tbody>
 <tr>
 <td markdown="span">Audio Format</td>
-<td markdown="span">wav (amr-wb for amr-wb type)</td>
+<td markdown="span">wav (if amr-wb audioformat use amr-wb)</td>
 </tr>
 <tr>
 <td markdown="span">Encoding Format</td>
-<td markdown="span">pcm16 (amr-wb for amr-wb type)</td>
+<td markdown="span">pcm16 (if amr-wb audioformat use amr-wb as encoding style)</td>
 </tr>
 </tbody>
 </table>
