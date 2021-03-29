@@ -2,13 +2,19 @@ from __future__ import print_function
 
 import argparse
 import sys
-import proto.stt_pb2_grpc as stt_pb2_grpc
+import gnani_grpc_client.proto.stt_pb2_grpc as stt_pb2_grpc
 import grpc
-import proto.stt_pb2 as stt_pb2
+import gnani_grpc_client.proto.stt_pb2 as stt_pb2
 import time
 import wave
 from configparser import ConfigParser
 
+import os
+cwd = os.getcwd()
+
+
+import gnani_grpc_client as _
+a = _.__path__[0]
 #Reading from config file
 parser = ConfigParser()
 parser.read('user.config')
@@ -34,7 +40,9 @@ class Sender:
 			SSL Configuration goes here.
 			Paste the 'cert.pem' mailed to you in the root directory.
 		'''
-		ca_cert = 'cert.pem'
+		certificate = input("Enter name of the certificate along with extention: ")
+		ca_cert = cwd + "/" + certificate 
+		# cert.pem'
 		root_certs = open(ca_cert,'rb').read()
 		credentials = grpc.ssl_channel_credentials(root_certs)
 		channel = grpc.secure_channel(ipaddr + ':' + str(port), credentials)
@@ -84,25 +92,53 @@ class Sender:
 
 				raise StopIteration
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
+# def start():
+# 	senderObj = Sender()
+# 	API_URL=asr.gnani.ai
+# 	TOKEN=Paste your token
+# 	ACCESSKEY=Paste your accesskey
+# 	ENCODING=pcm16
+# 	LANGUAGE_CODE=Choose your language code from api docs
+# 	AUDIOFORMAT=wav
 
+# 	#API URL
+# 	service = senderObj.createService(parser.get('USER', 'API_URL'), 443)
+
+# 	'''
+# 		Set your token , accesskey , encoding , lang_code , audioformat in the config map.
+# 		Sample audio sent from audio/ folder. You can send your own audio.
+# 	'''
+# 	token=parser.get('USER', 'TOKEN')
+# 	accesskey=parser.get('USER', 'ACCESSKEY')
+# 	encoding=parser.get('USER', 'ENCODING')
+# 	lang_code=parser.get('USER', 'LANGUAGE_CODE')
+# 	audioformat=parser.get('USER', 'AUDIOFORMAT')
+
+# 	senderObj.clientChunkStream(service,"audio/english.wav",token,accesskey,encoding,lang_code,audioformat,1280)
+
+def start(url, token, access_key, encoding, lang_code , formatt, a_name):
 	senderObj = Sender()
 
+	# API_URL=asr.gnani.ai
+	# TOKEN=Paste your token
+	# ACCESSKEY=Paste your accesskey
+	# ENCODING=pcm16
+	# LANGUAGE_CODE=Choose your language code from api docs
+	# AUDIOFORMAT=wav
+
 	#API URL
-	service = senderObj.createService(parser.get('USER', 'API_URL'), 443)
+	service = senderObj.createService(url, 443)
 
 	'''
 		Set your token , accesskey , encoding , lang_code , audioformat in the config map.
 		Sample audio sent from audio/ folder. You can send your own audio.
 	'''
-	token=parser.get('USER', 'TOKEN')
-	accesskey=parser.get('USER', 'ACCESSKEY')
-	encoding=parser.get('USER', 'ENCODING')
-	lang_code=parser.get('USER', 'LANGUAGE_CODE')
-	audioformat=parser.get('USER', 'AUDIOFORMAT')
-
-	senderObj.clientChunkStream(service,"audio/english.wav",token,accesskey,encoding,lang_code,audioformat,1280)
-
-
-
-
+	token= token
+	accesskey= access_key
+	encoding= encoding
+	lang_code= lang_code
+	audioformat= formatt
+	audio_name = a_name
+	y = cwd + "/" + audio_name
+	senderObj.clientChunkStream(service,y,token,accesskey,encoding,lang_code,audioformat,1280)

@@ -1,0 +1,2 @@
+from gnani_grpc_client.proto import stt_pb2_grpc
+from gnani_grpc_client.proto import stt_pb2

@@ -3,17 +3,35 @@ import time
 import logging
 from configparser import ConfigParser
 import json
+import site; 
+
+import os 
+dirr = os.getcwd()
+# a = site.getsitepackages()[0]
+import gnani_rest_api as _ 
+a =  _.__path__[0]
 
 ''' Reading from config file '''
 parser = ConfigParser()
 parser.read('user.config')
-
+api_upload_url = input("Enter API UPLOAD URL: ")
+api_status_url = input("Enter API STATUS URL: ")
+audio_n = input("Enter the full name of the audio with extention: ")
+filePath = dirr + "/"+ audio_n
+certificate = input("Enter the name of the certificate with extention: ")
+cert = dirr + "/" + certificate
+handler = logging.FileHandler('test.log', 'w', 'utf-8')
 
 class Sender:
     ''' logger instantiation '''
     def __init__(self):
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.DEBUG)
+        handler = logging.FileHandler('test.log', 'w', 'utf-8')
+        formatter = logging.Formatter('%(name)s %(message)s')
+        handler.setFormatter(formatter)
+        self.logger.addHandler(handler)
+        # # self.logger = get_logger(__name__)
 
     def uploadAudioFile(self, audio_file, token, accesskey, encoding, lang_code, audioformat):
         '''Method uploading audio file for speech to text conversion
@@ -80,6 +98,7 @@ class Sender:
                 url=api_status_url, verify=cert, headers=headers)
             if response.status_code == 200:
                 res = response.json()
+                print(res)
                 status = res.get('status')
                 if status == 'in-progress':
                     self.logger.info('Audio file status : '+ status)
@@ -87,6 +106,7 @@ class Sender:
                 elif status == 'success':
                     self.logger.info(
                         'Audio to text result : '+response.text)
+                    
                     return status
                 else :
                     self.logger.info('Audio to text is not successful!')
@@ -100,36 +120,43 @@ class Sender:
                 'Failed to get response for the audio file : '+str(ex))
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
+# print("hello")
+def start(token, access_key, encoding, lang_code , formatt):
+    print("====================================")
 
     senderObj = Sender()
     '''
-	Set your token , accesskey , encoding , lang_code , audioformat in the user.config file.
-	Sample audio sent from audio/ folder. You can send your own audio.
-	'''
-
-    token = parser.get('USER', 'TOKEN')
-    accesskey = parser.get('USER', 'ACCESSKEY')
-    encoding = parser.get('USER', 'ENCODING')
-    lang_code = parser.get('USER', 'LANGUAGE_CODE')
-    audioformat = parser.get('USER', 'AUDIOFORMAT')
-    api_upload_url = parser.get('USER', 'API_UPLOAD')
-    api_status_url = parser.get('USER', 'API_STATUS')
+    Set your token , accesskey , encoding , lang_code , audioformat in the user.config file.
+    Sample audio sent from audio/ folder. You can send your own audio.
     '''
-	SSL Configuration goes here.
-	Paste the 'chain.pem' mailed to you in the root directory.
-	'''
-    cert = "chain.pem"
-    filePath = 'audio/kannada.wav'
+    token = token
+    accesskey = access_key
+    encoding = encoding
+    lang_code = lang_code
+    audioformat = formatt
+	# audio_name = a_name
+
+    # api_upload_url = parser.get('USER', 'API_UPLOAD')
+    # api_status_url = parser.get('USER', 'API_STATUS')
+    '''
+    SSL Configuration goes here.
+    Paste the 'chain.pem' mailed to you in the root directory.
+    '''
+    # cert = "chain.pem"
 
     try:
         '''Response is saved in "result.log" file '''
-        logging.basicConfig(filename="result.log",
-                            format='%(asctime)s %(message)s',
-                            filemode='w')
+        h = a + "/result.log"
+        logging.basicConfig(filename=h ,encoding='utf-8', mode='w',
+                            format='%(asctime)s %(message)s'
+                            )
+
         '''uploading audio file on server '''
         transcript_key = senderObj.uploadAudioFile(
             filePath, token, accesskey, encoding, lang_code, audioformat)
+        print("_________________________________________-")
+        print(transcript_key)
         if transcript_key is not "":
             for retriescount in range(10):
                 time.sleep(60)
@@ -137,6 +164,7 @@ if __name__ == "__main__":
                 result = senderObj.audioFileStatus(
                     token, accesskey, encoding, lang_code, audioformat, transcript_key)
                 if result == 'success':
+                    print(result)
                     break
                 if result == 'fail':
                     break
@@ -144,4 +172,7 @@ if __name__ == "__main__":
             senderObj.logger.info('Audio to text is not successful!') 
 
     except Exception as ex:
+        print(ex)
         senderObj.logger.error(str(ex))
+
+# start()
