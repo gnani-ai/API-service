@@ -49,7 +49,7 @@ ___
 
 - To get the transcription run :
 - `client.start(token, accesskey, encoding, lang_code, format)`
-- note: please enter the value of each ones within single inverted comas ' ' for example: client.start('hindi','wav')
+- note: please enter the value of each ones within single inverted comas ' ' for example: client.start('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9..-KwcxWz45Q', '26ac22bd1c4ac4941c75e86' , 'pcm16', 'hi-IN', 'wav')
 
 ## Authentication 
 To get access to our API(s) visit [gnani.ai](https://www.gnani.ai/api/#ExploreAPI) to register yourself.
