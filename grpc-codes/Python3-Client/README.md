@@ -48,7 +48,7 @@ ___
 - Enter the required inputs.
 
 - To get the transcription run :
-- `client.start(token, accesskey, encoding, lang_code, format)`
+- `client.start(url,token, accesskey, encoding, lang_code, format, audio_name)`
 - note: please enter the value of each ones within single inverted comas ' ' for example: client.start('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9..-KwcxWz45Q', '26ac22bd1c4ac4941c75e86' , 'pcm16', 'hi-IN', 'wav')
 
 ## Authentication 
