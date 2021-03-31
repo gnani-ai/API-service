@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.1' 
+VERSION = '0.0.2' 
 DESCRIPTION = 'gnani_asr_rest_api'
 LONG_DESCRIPTION = 'This is a rest api for transcription of audio to text'
 
@@ -16,7 +16,7 @@ setup(
         packages=find_packages(),
         package_data={'gnani_python_client.audio': ['*.wav'], 'gnani_python_client': ['*.pem', '*.md','*.log']},
         include_package_data=True,
-        install_requires=[],
+        install_requires=['requests'],
         keywords=['python', 'automatic text to speech'],
         classifiers= [
             "Development Status :: 3 - Alpha",

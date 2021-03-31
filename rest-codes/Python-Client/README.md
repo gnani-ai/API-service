@@ -36,11 +36,11 @@ ___
 - check the result in result.log file
 
 ### Python package link.
-- For package link: [Package Link](https://pypi.org/project/gnani-asr-rest-api/0.0.1/)
+- For package link: [Package Link](https://pypi.org/project/gnani-asr-rest-api/0.0.2/)
 
 
 ### Installation of package. 
-- `pip install gnani-asr-rest-api==0.0.1`
+- `pip install gnani-asr-rest-api==0.0.2`
 
 # Note:
 - Please make sure you are running the python command from the directory which has certificate file and the audio file. 
