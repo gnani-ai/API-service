@@ -146,7 +146,7 @@ Language Codes are as follows :
 
 ### Note 
 - Your request will not be authenticated if you fail to add any of these headers to your request.
-- Each registered user can only send 250 grpc requests of 15 seconds audio each, beyond which the user will be blocked. Also, user is allowed to send only 5 concurrent requests per second. If you wish to opt for extension , please send a mail to operations@gnani.ai
+- Each registered user can only send 250 grpc requests of 15 seconds audio each, beyond which the user will be blocked. Also, user is allowed to send only 5 concurrent requests per second. If you wish to opt for extension , please send a mail to hello@gnani.ai
 - We currently support streaming through GRPC and audio with the following properties:
 <table>
 <colgroup>
@@ -209,7 +209,7 @@ Example : grpc_message:"You are not authorised to use this language"</td>
   <tr>
 <td markdown="span">UNAVAILABLE</td>
 <td markdown="span">14</td>
-<td markdown="span">The server is currently unavailable. Please wait for sometime and retry. If the problem persists contact operations@gnani.ai or raise an issue on github.</td>
+<td markdown="span">The server is currently unavailable. Please wait for sometime and retry. If the problem persists contact hello@gnani.ai or raise an issue on github.</td>
 </tr>
 </tbody>
 </table>
@@ -232,4 +232,4 @@ REST Codes
 ### Support or Contact
 
 #### Disclaimer
-The Speech APIs are completely proprietary and are the sole property of Gnani.ai. We reserve the right to remove users access at any point of time. Note that the free access to the APIs are purely for testing or experimental purposes, and will be available to the users for a limited amount of time, after which they will have to purchase the commercial version. Gnani.ai will immediately remove access if the user is found to be using the APIs for commercial purposes. If you wish to obtain unlimited access, you can make an enquiry on the website or write to us at operations@gnani.ai. Also if you are having trouble please raise an issue or mail to us at operations@gnani.ai
+The Speech APIs are completely proprietary and are the sole property of Gnani.ai. We reserve the right to remove users access at any point of time. Note that the free access to the APIs are purely for testing or experimental purposes, and will be available to the users for a limited amount of time, after which they will have to purchase the commercial version. Gnani.ai will immediately remove access if the user is found to be using the APIs for commercial purposes. If you wish to obtain unlimited access, you can make an enquiry on the website or write to us at hello@gnani.ai. Also if you are having trouble please raise an issue or mail to us at hello@gnani.ai
