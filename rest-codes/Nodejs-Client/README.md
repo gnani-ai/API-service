@@ -1,7 +1,7 @@
 # Nodejs Client
 
 ### Note 
-- The rest services are for restricted users only. If you wish to opt for rest services , please contact operations@gnani.ai
+- The rest services are for restricted users only. If you wish to opt for rest services , please contact hello@gnani.ai
 
 ## Installation
 
