@@ -79,7 +79,7 @@ Language Codes are as follows :
 <td markdown="span">te-IN</td>
 </tr>
   <tr>
-<td markdown="span">Gujarathi</td>
+<td markdown="span">Gujarati</td>
 <td markdown="span">gu-IN</td>
 </tr>
  <tr>
