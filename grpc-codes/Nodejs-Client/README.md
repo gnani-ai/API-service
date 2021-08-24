@@ -5,9 +5,10 @@
 Code tested with nodejs version 10.x (latest LTS version) and npm version 6.x
 
 ### Ubuntu 16.04/18.04
-- `sudo apt-get install curl`
+- `sudo apt-get install curl` (Use sudo for normal user)
 - `curl -sL https://deb.nodesource.com/setup_10.x`
 - `sudo apt-get install nodejs`
+- `sudo apt-get install -y npm`
 - `node -v` 
 - `npm -v`
 
