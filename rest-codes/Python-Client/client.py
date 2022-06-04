@@ -86,7 +86,7 @@ class Sender:
                     return status
                 elif status == 'success':
                     self.logger.info(
-                        'Audio to text result : '+response.text)
+                        'Audio to text result : '+ json.dumps(res,ensure_ascii=False))
                     return status
                 else :
                     self.logger.info('Audio to text is not successful!')
@@ -130,7 +130,7 @@ if __name__ == "__main__":
         '''uploading audio file on server '''
         transcript_key = senderObj.uploadAudioFile(
             filePath, token, accesskey, encoding, lang_code, audioformat)
-        if transcript_key is not "":
+        if transcript_key !="":
             for retriescount in range(10):
                 time.sleep(60)
                 ''' fetching the status of uploaded audio file '''

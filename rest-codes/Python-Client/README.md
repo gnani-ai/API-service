@@ -5,8 +5,11 @@
 
 ## Installation
 
+## Prerequisites
+- Make sure that you have Python3.8+ installed on your machine
+
 ### Ubuntu
-- apt-get install python3.6
+- apt-get install python3.8
 - apt-get install python3-pip
 
 ### Mac OSX
