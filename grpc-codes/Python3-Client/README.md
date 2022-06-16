@@ -1,9 +1,12 @@
 # Grpc python stream client
 
+## Note
+- You must have minimum python version 3.8 installed to this project.
+
 ## Installation
 
 ### Ubuntu
-- apt-get install python3.6
+- apt-get install python3.8
 - apt-get install python3-pip
 
 ### Mac OSX
