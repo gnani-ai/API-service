@@ -111,7 +111,7 @@ public class HttpsRequest {
 
         // End content wrapper
         request.writeBytes(this.crlf);
-        request.writeBytes(this.twoHyphens + this.boundary + filePath
+        request.writeBytes(this.twoHyphens + this.boundary + 
             this.twoHyphens + this.crlf);
 
 
