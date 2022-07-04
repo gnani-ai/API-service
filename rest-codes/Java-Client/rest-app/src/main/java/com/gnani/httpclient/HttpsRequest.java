@@ -78,7 +78,7 @@ public class HttpsRequest {
         conn.setRequestProperty("audioformat", audioFormat);
         conn.setRequestProperty("encoding", encoding);
         if (null != requestid){
-            conn.setRequestProperty("requestid", requestid);
+            conn.setRequestProperty("requestid", requestid);filePath
         }
         conn.setUseCaches(false);
         conn.setDoOutput(true);
@@ -101,7 +101,7 @@ public class HttpsRequest {
         request.writeBytes(this.twoHyphens + this.boundary + this.crlf);
         request.writeBytes("Content-Disposition: form-data; name=\"" +
             this.attachmentName + "\";filename=\"" + 
-            this.attachmentFileName + "\"" + this.crlf);
+            filePath + "\"" + this.crlf);
         request.writeBytes(this.crlf);
 
         // Write file content
@@ -111,7 +111,7 @@ public class HttpsRequest {
 
         // End content wrapper
         request.writeBytes(this.crlf);
-        request.writeBytes(this.twoHyphens + this.boundary + 
+        request.writeBytes(this.twoHyphens + this.boundary + filePath
             this.twoHyphens + this.crlf);
 
 
