@@ -78,7 +78,7 @@ public class HttpsRequest {
         conn.setRequestProperty("audioformat", audioFormat);
         conn.setRequestProperty("encoding", encoding);
         if (null != requestid){
-            conn.setRequestProperty("requestid", requestid);filePath
+            conn.setRequestProperty("requestid", requestid);
         }
         conn.setUseCaches(false);
         conn.setDoOutput(true);
