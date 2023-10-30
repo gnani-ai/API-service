@@ -38,11 +38,8 @@ class Sender:
     def createService(self, ipaddr, port):
         '''
             SSL Configuration goes here.
-            Paste the 'cert.pem' mailed to you in the root directory.
         '''
-        ca_cert = 'cert.pem'
-        root_certs = open(ca_cert, 'rb').read()
-        credentials = grpc.ssl_channel_credentials(root_certs)
+        credentials = grpc.ssl_channel_credentials()
         channel = grpc.secure_channel(ipaddr + ':' + str(port), credentials)
         return stt_pb2_grpc.ListenerStub(channel)
 
